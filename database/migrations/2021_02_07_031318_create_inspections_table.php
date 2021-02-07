@@ -15,7 +15,6 @@ class CreateInspectionsTable extends Migration
     {
         Schema::create('inspections', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->text('description');
             $table->timestamps();
         });

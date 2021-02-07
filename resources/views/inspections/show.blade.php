@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title'){{ $inspection->name }}@stop
+@section('title'){{ date('l j\'S F Y', strtotime($inspection->created_at)) }}@stop
 @section('title_postfix', '| BeeLogs')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">{{ $inspection->name }}</h1>
+    <h1 class="m-0 text-dark">{{ date('l j\'S F Y', strtotime($inspection->created_at)) }}</h1>
     @include('partials._messages')
 @stop
 

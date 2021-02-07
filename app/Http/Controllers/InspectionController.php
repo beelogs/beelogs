@@ -51,14 +51,12 @@ class InspectionController extends Controller
     {
         //
         $this->validate($request, array(
-          'name' => 'required|max:255',
           'description' => 'required|max:255',
         ));
 
         // Store in the database
         $inspection = new Inspection;
 
-        $inspection->name = $request->name;
         $inspection->description = $request->description;
 
         $inspection->save();

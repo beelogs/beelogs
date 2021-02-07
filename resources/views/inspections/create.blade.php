@@ -43,7 +43,6 @@
 
                       <div class="row">
                           <div class="col-12">
-                              {{ Form::text('name', null, array('class' => 'form-control mb-3', 'placeholder' => 'Inspection Name', 'required' => '', 'maxlength' => '255')) }}
                               {{ Form::textarea('description', null, array('class' => 'form-control mb-3', 'placeholder' => 'Inspection Description', 'required' => '', 'maxlength' => '255')) }}
                           </div>
                       </div>

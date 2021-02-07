@@ -46,7 +46,7 @@ return [
     */
 
     'logo' => '<b>Bee</b>Logs',
-    'logo_img' => 'media/bllogov01.png',
+    'logo_img' => 'media/bllogov3.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -318,22 +318,24 @@ return [
             ],
         ],
         /** Icons **/
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        /**
+        ** ['header' => 'labels'],
+        ** [
+        **     'text'       => 'important',
+        **     'icon_color' => 'red',
+        **     'url'        => '#',
+        ** ],
+        ** [
+        **     'text'       => 'warning',
+        **     'icon_color' => 'yellow',
+        **     'url'        => '#',
+        ** ],
+        ** [
+        **     'text'       => 'information',
+        **     'icon_color' => 'cyan',
+        **     'url'        => '#',
+        ** ],
+        **/
     ],
 
     /*
