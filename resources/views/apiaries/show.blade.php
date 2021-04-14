@@ -26,7 +26,7 @@
           </div>
           <div class="mt-4 mb-4">
             <!-- Google Maps - Lat | Long -->
-            <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q={{ $apiary->latitude }},{{ $apiary->longitude }}&amp;key=AIzaSyBET88Zht5x_hrBTNAzCLlmROrrGOxtTdU"></iframe>
+            <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q={{ $apiary->latitude }},{{ $apiary->longitude }}&amp;key={{ config('maps.key') }}"></iframe>
           </div>
       </div>
   </div>
