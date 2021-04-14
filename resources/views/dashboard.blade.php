@@ -3,16 +3,17 @@
 @section('title', 'BeeLogs')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Dashboard</h1>
+  <div class="row">
+      <div class="col-10">
+          <h1 class="m-0 text-dark">Dashboard</h1>
+      </div>
+      <div class="col-2">
+          <a class="btn btn-primary btn-block" href="{{ route('inspections.create') }}" role="button">New Inspection</a>
+      </div>
+  </div>
 @stop
 
-@section('adminlte_css')
-<style>
-    .bl-welcometext {
-      text-indent: 25px;
-    }
-</style>
-@stop
+@include('partials._sidebar')
 
 @section('content')
     <div class="row">
@@ -20,7 +21,7 @@
             <div class="small-box bg-gradient-primary">
                 <div class="inner">
                     <h3>{{ $count = \DB::table('apiaries')->count() }}</h3>
-                    <p>Apiaries</p>
+                    <p>{{ trans('dashboard.apiaries') }}</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-map-marker-alt"></i>
@@ -34,7 +35,7 @@
             <div class="small-box bg-gradient-secondary">
                 <div class="inner">
                     <h3>{{ $count = \DB::table('hives')->count() }}</h3>
-                    <p>Hives</p>
+                    <p>{{ trans('dashboard.hives') }}</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-cubes"></i>
@@ -48,7 +49,7 @@
             <div class="small-box bg-gradient-primary">
                 <div class="inner">
                     <h3>{{ $count = \DB::table('queens')->count() }}</h3>
-                    <p>Queens</p>
+                    <p>{{ trans('dashboard.queens') }}</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-crown"></i>
@@ -62,7 +63,7 @@
             <div class="small-box bg-gradient-secondary">
                 <div class="inner">
                     <h3>{{ $count = \DB::table('colonies')->count() }}</h3>
-                    <p>Colonies</p>
+                    <p>{{ trans('dashboard.colonies') }}</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-users"></i>
@@ -80,9 +81,11 @@
             <div class="card">
                 <div class="card-header">
                     <span >Apiaries</span>
+                    {{--
                     <div class="float-right">
                         <a class="btn btn-primary btn-sm" href="{{ route('apiaries.create') }}" role="button">Create</a>
                     </div>
+                    --}}
                 </div>
                 <div class="card-body">
 
@@ -111,9 +114,11 @@
             <div class="card">
                 <div class="card-header">
                     Hives
+                    {{--
                     <div class="float-right">
                         <a class="btn btn-primary btn-sm" href="{{ route('hives.create') }}" role="button">Create</a>
                     </div>
+                    --}}
                 </div>
                 <div class="card-body">
                   <table class="table">
@@ -121,7 +126,7 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Apiary</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -129,7 +134,7 @@
                       <tr>
                         <th scope="row">{{ $hive->id }}</th>
                         <td><a href="{{ route('hives.show', $hive->id) }}">{{ $hive->name }}</a></td>
-                        <td>{{ substr($hive->description, 0, 40) }}{{ strlen($hive->description) > 40 ? "…" : "" }}</td>
+                        <td>{{ $apiary->name }}</td>
                       </tr>
                       @endforeach
                     </tbody>
@@ -144,9 +149,11 @@
             <div class="card">
                 <div class="card-header">
                     Queens
+                    {{--
                     <div class="float-right">
                         <a class="btn btn-primary btn-sm" href="{{ route('queens.create') }}" role="button">Create</a>
                     </div>
+                    --}}
                 </div>
                 <div class="card-body">
 
@@ -175,9 +182,11 @@
             <div class="card">
                 <div class="card-header">
                     Colonies
+                    {{--
                     <div class="float-right">
                         <a class="btn btn-primary btn-sm" href="{{ route('colonies.create') }}" role="button">Create</a>
                     </div>
+                    --}}
                 </div>
                 <div class="card-body">
                   <table class="table">
@@ -207,9 +216,11 @@
           <div class="card">
               <div class="card-header">
                   Last 5 Inspections
+                  {{--
                   <div class="float-right">
                       <a class="btn btn-primary btn-sm" href="{{ route('inspections.create') }}" role="button">Create</a>
                   </div>
+                  --}}
               </div>
               <div class="card-body">
 
@@ -218,7 +229,8 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Date</th>
-                      <th scope="col">Description</th>
+                      <th scope="col">Hive</th>
+                      <th scope="col">Notes</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -226,7 +238,8 @@
                     <tr>
                       <th scope="row">{{ $inspection->id }}</th>
                       <td><a href="{{ route('inspections.show', $inspection->id) }}">{{ date('l j\'S F Y (h:ia)', strtotime($inspection->created_at)) }}</a></td>
-                      <td>{{ substr($inspection->description, 0, 50) }}{{ strlen($inspection->description) > 50 ? "…" : "" }}</td>
+                        <th scope="row">{{ $inspection->hive }}</th>
+                      <td>{{ substr($inspection->notes, 0, 50) }}{{ strlen($inspection->notes) > 50 ? "…" : "" }}</td>
                     </tr>
                     @endforeach
                   </tbody>

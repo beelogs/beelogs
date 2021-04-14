@@ -51,13 +51,24 @@ class InspectionController extends Controller
     {
         //
         $this->validate($request, array(
-          'description' => 'required|max:255',
+          'notes' => 'required|max:255',
         ));
 
         // Store in the database
         $inspection = new Inspection;
 
-        $inspection->description = $request->description;
+        $inspection->notes = $request->notes;
+        $inspection->hive = $request->hive;
+        $inspection->temperament = $request->temperament;
+        $inspection->cleanliness = $request->cleanliness;
+        $inspection->brood = $request->brood;
+        $inspection->stores = $request->stores;
+        $inspection->room = $request->room;
+        $inspection->health = $request->health;
+        $inspection->varroa = $request->varroa;
+        $inspection->feed = $request->feed;
+        $inspection->supers = $request->supers;
+        $inspection->weather = $request->weather;
 
         $inspection->save();
 
@@ -111,5 +122,6 @@ class InspectionController extends Controller
     public function destroy($id)
     {
         //
+        return view('inspections.index');
     }
 }

@@ -15,7 +15,19 @@ class CreateInspectionsTable extends Migration
     {
         Schema::create('inspections', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
+            $table->text('notes')->nullable();
+            $table->text('hive');
+            $table->text('temperament');
+            $table->text('cleanliness');
+            $table->text('brood');
+            $table->text('stores');
+            $table->text('room');
+            $table->text('health');
+            $table->text('varroa');
+            $table->text('feed')->nullable();
+            $table->text('supers')->nullable();
+            $table->text('weather')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

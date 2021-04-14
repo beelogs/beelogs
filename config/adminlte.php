@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Bee</b>Logs',
+    'logo' => '<b>B</b>ee<b>L</b>ogs',
     'logo_img' => 'media/bllogov3.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -65,11 +65,11 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'layout_topnav' => null,
+    'layout_topnav' => false,
     'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
@@ -145,9 +145,9 @@ return [
     */
 
     'sidebar_mini' => true,
-    'sidebar_collapse' => false,
-    'sidebar_collapse_auto_size' => false,
-    'sidebar_collapse_remember' => false,
+    'sidebar_collapse' => true,
+    'sidebar_collapse_auto_size' => true,
+    'sidebar_collapse_remember' => true,
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
@@ -166,11 +166,11 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
+    'right_sidebar_push' => false,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
@@ -289,7 +289,7 @@ return [
         ],
         [
             'text'    => 'Inspections',
-            'icon'    => 'fas fa-search',
+            'icon'    => 'fas fa-eye',
             'submenu' => [
                 [
                     'text' => 'Inspections',
@@ -298,6 +298,36 @@ return [
                 [
                     'text' => 'Create Inspection',
                     'url'  => '/dashboard/inspections/create',
+                ],
+            ],
+        ],
+        /** Tools **/
+        ['header' => false],
+        [
+            'text'    => 'Tools',
+            'icon'    => 'fas fa-tools',
+            'submenu' => [
+                [
+                    'text' => 'Pollen Colour Chart',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Varroa Calculator',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Reports',
+            'icon'    => 'fas fa-chart-area',
+            'submenu' => [
+                [
+                    'text' => 'Report 1',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Report 2',
+                    'url'  => '#',
                 ],
             ],
         ],

@@ -19,6 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard/profile', 'ProfileController@index')->name('profile');
 Route::resource('/dashboard/apiaries', 'ApiaryController');
 Route::resource('/dashboard/hives', 'HiveController');
 Route::resource('/dashboard/queens', 'QueenController');

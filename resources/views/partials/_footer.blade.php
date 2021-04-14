@@ -5,13 +5,13 @@
       </div>
       <div class="col-4">
           <div class="float-right">
-              Version: 0.1.0
+              Version: @include('partials._version')
           </div>
       </div>
   </div>
 @stop
 
-@section('adminlte_css_pre')
+@section('adminlte_css')
   <style>
       .main-footer {
         background-color: #343a40 !important;

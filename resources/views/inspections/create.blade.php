@@ -3,30 +3,6 @@
 @section('title', 'Create Inspection')
 @section('title_postfix', '| BeeLogs')
 
-@section('adminlte_css_pre')
-<style>
-.btn-file {
-  position: relative;
-  overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-</style>
-@stop
-
 @section('content_header')
     <h1 class="m-0 text-dark">Create Inspection</h1>
 @stop
@@ -39,11 +15,111 @@
                 <div class="card-body">
                       {{-- CSRF --}}
                       {{ Form::token() }}
-                      {{-- Apiary Name --}}
 
                       <div class="row">
                           <div class="col-12">
-                              {{ Form::textarea('description', null, array('class' => 'form-control mb-3', 'placeholder' => 'Inspection Description', 'required' => '', 'maxlength' => '255')) }}
+                              {{ Form::label('notes', 'Notes') }}
+                              {{ Form::textarea('notes', null, array('class' => 'form-control mb-3', 'maxlength' => '10000', 'rows' => '4', 'required' => '')) }}
+                          </div>
+                      </div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+
+                      <div class="row">
+                          <div class="col-6">
+                              {{ Form::label('temperament', 'Temperament') }}
+                              {{ Form::select('temperament', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                              ]) }}
+                          </div>
+                          <div class="col-6">
+                              {{ Form::label('cleanliness', 'Cleanliness') }}
+                              {{ Form::select('cleanliness', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                              ]) }}
+                          </div>
+                      </div>
+
+                      <div class="row mt-3">
+                          <div class="col-6">
+                              {{ Form::label('brood', 'Brood') }}
+                              {{ Form::select('brood', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                              ]) }}
+                          </div>
+                          <div class="col-6">
+                              {{ Form::label('stores', 'Stores') }}
+                              {{ Form::select('stores', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                              ]) }}
+                          </div>
+                      </div>
+
+                      <div class="row mt-3">
+                          <div class="col-6">
+                              {{ Form::label('room', 'Room') }}
+                              {{ Form::select('room', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                              ]) }}
+                          </div>
+                          <div class="col-6">
+                              {{ Form::label('health', 'Health') }}
+                              {{ Form::select('health', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                              ]) }}
+                          </div>
+                      </div>
+
+                      <div class="row mt-3">
+                          <div class="col-6">
+                              {{ Form::label('varroa', 'Varroa') }}
+                              {{ Form::select('varroa', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                              ]) }}
+                          </div>
+                          <div class="col-6">
+                              {{ Form::label('feed', 'Feed') }}
+                              {{ Form::select('feed', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => ''
+                              ]) }}
+                          </div>
+                      </div>
+
+                      <div class="row mt-3">
+                          <div class="col-6">
+                              {{ Form::label('supers', 'Supers') }}
+                              {{ Form::select('supers', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => ''
+                              ]) }}
+                          </div>
+                          <div class="col-6">
+                              {{ Form::label('weather', 'Weather') }}
+                              {{ Form::select('weather', [
+                                '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'
+                              ], null, [
+                                'class' => 'form-control', 'placeholder' => ''
+                              ]) }}
                           </div>
                       </div>
 
@@ -58,7 +134,12 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                  {{ Form::select('hive', ['01' => 'Hive 01', '02' => 'Hive 02'], null, array('class' => 'form-control', 'placeholder' => 'Choose a hive&hellip;')) }}
+                    {{ Form::label('hive', 'Hive') }}
+                    {{ Form::select('hive', [
+                      'Hive 01' => 'Hive 01', 'Hive 02' => 'Hive 02'
+                    ], null, [
+                      'class' => 'form-control', 'placeholder' => '', 'required' => ''
+                      ]) }}
                 </div>
             </div>
             <div class="card">

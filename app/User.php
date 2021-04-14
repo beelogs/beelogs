@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname', 'lastname', 'email', 'password',
     ];
 
     /**
@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function adminlte_image()
+    {
+        return '/media/bllogov3.png';
+    }
+
+    public function adminlte_desc()
+    {
+        return 'Welcome to BeeLogs!';
+    }
+
+    public function adminlte_profile_url()
+    {
+        return '/dashboard/profile';
+    }
 }

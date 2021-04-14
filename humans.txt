@@ -1,0 +1,24 @@
+/* TEAM */
+    Lead: Nicholas Taylor
+    Email: nicholas [at] beelogs.org
+    Location: Shropshire, United Kingdom.
+
+/* THANKS */
+    ES Translator:
+    Location:
+
+    FR Translator:
+    Location:
+
+    DE Translator:
+    Location:
+
+    PL Translator: Gosia Zmudzinska.
+    Location: Shropshire, United Kingdom.
+
+/* SITE */
+    Last Update: 07/02/2021
+    Language: English
+    Framework: Laravel
+    Components: Composer, NPM, Vue, AdminLTE, Bootstrap, Parsley, Quill, jQuery, Modernizer
+    IDE: Atom, Sublime Text 3, GitKraken, Photoshop CC

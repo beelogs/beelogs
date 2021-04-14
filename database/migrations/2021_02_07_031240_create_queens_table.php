@@ -16,7 +16,11 @@ class CreateQueensTable extends Migration
         Schema::create('queens', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable();
+            $table->text('hatchdate')->nullable();
+            $table->text('matedate')->nullable();
+            $table->text('species')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

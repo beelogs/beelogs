@@ -24,20 +24,20 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Notes</th>
                       </tr>
                     </thead>
                     @foreach ($inspections as $inspection)
                     <tbody>
                       <tr>
                         <th scope="row">{{ $inspection->id }}</th>
-                        <td>{{ $inspection->name }}</td>
-                        <td>{{ $inspection->description }}</td>
+                        <td>{{ date('l j\'S F Y (h:ia)', strtotime($inspection->created_at)) }}</td>
+                        <td>{{ substr($inspection->notes, 0, 50) }}{{ strlen($inspection->notes) > 50 ? "…" : "" }}</td>
                         <td>
                             <div class="btn-group btn-group-sm float-right" role="group" aria-label="Basic example">
                               <a class="btn btn-primary" href="{{ route('inspections.show', $inspection->id) }}" role="button">View</a>
-                              <button type="button" class="btn btn-secondary">Edit</button>
-                              <button type="button" class="btn btn-danger">Delete</button>
+                              <a class="btn btn-secondary" href="#" role="button">Edit</a>
+                              <a class="btn btn-danger" href="#" role="button">Delete</a>
                             </div>
                         </td>
                       </tr>
