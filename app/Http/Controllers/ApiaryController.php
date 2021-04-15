@@ -94,6 +94,8 @@ class ApiaryController extends Controller
     public function edit($id)
     {
         //
+        $apiary = Apiary::find($id);
+        return view('apiaries.edit')->withApiary($apiary);
     }
 
     /**
@@ -106,6 +108,23 @@ class ApiaryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, array(
+            'name' => 'required',
+            'description' => 'required|max:255',
+            'latitude' => 'required|max:255',
+            'longitude' => 'required|max:255'
+        ));
+
+        $apiary = Apiary::find($id);
+        $apiary->name = $request->input('name');
+        $apiary->description = $request->input('description');
+        $apiary->latitude = $request->input('latitude');
+        $apiary->longitude = $request->input('longitude');
+        $apiary->save();
+
+        Session::flash('success', 'This apiary has been successfully updated.');
+
+        return redirect()->route('apiaries.show', $apiary->id);
     }
 
     /**

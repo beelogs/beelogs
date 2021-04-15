@@ -30,12 +30,12 @@
                     <tbody>
                       <tr>
                         <th scope="row">{{ $apiary->id }}</th>
-                        <td>{{ $apiary->name }}</td>
+                          <td><a href="{{ route('apiaries.show', $apiary->id) }}">{{ $apiary->name }}</a></td>
                         <td>{{ $apiary->description }}</td>
                         <td>
                             <div class="btn-group btn-group-sm float-right" role="group" aria-label="Basic example">
                               <a class="btn btn-primary" href="{{ route('apiaries.show', $apiary->id) }}" role="button">View</a>
-                              <a class="btn btn-secondary" href="#" role="button">Edit</a>
+                              <a class="btn btn-secondary" href="{{ route('apiaries.edit', $apiary->id) }}" role="button">Edit</a>
                               <a class="btn btn-danger" href="#" role="button">Delete</a>
                             </div>
                         </td>
