@@ -309,7 +309,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Pollen Colour Chart',
-                    'url'  => '#',
+                    'url'  => '/dashboard/tools/pollen-chart',
                 ],
                 [
                     'text' => 'Varroa Calculator',
@@ -339,6 +339,10 @@ return [
             'submenu' => [
                 [
                     'text' => 'General',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'API',
                     'url'  => '#',
                 ],
                 [

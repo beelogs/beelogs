@@ -25,3 +25,5 @@ Route::resource('/dashboard/hives', 'HiveController');
 Route::resource('/dashboard/queens', 'QueenController');
 Route::resource('/dashboard/colonies', 'ColonyController');
 Route::resource('/dashboard/inspections', 'InspectionController');
+
+Route::get('/dashboard/tools/pollen-chart', 'ToolController@pollenchart');
