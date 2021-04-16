@@ -33,11 +33,13 @@
                           <td><a href="{{ route('apiaries.show', $apiary->id) }}">{{ $apiary->name }}</a></td>
                         <td>{{ $apiary->description }}</td>
                         <td>
+                            {{ Form::open(['route' => ['apiaries.destroy', $apiary->id], 'method' => 'DELETE']) }}
                             <div class="btn-group btn-group-sm float-right" role="group" aria-label="Basic example">
-                              <a class="btn btn-primary" href="{{ route('apiaries.show', $apiary->id) }}" role="button">View</a>
-                              <a class="btn btn-secondary" href="{{ route('apiaries.edit', $apiary->id) }}" role="button">Edit</a>
-                              <a class="btn btn-danger" href="#" role="button">Delete</a>
+                                <a class="btn btn-primary" href="{{ route('apiaries.show', $apiary->id) }}" role="button">View</a>
+                                <a class="btn btn-secondary" href="{{ route('apiaries.edit', $apiary->id) }}" role="button">Edit</a>
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                             </div>
+                            {{ Form::close() }}
                         </td>
                       </tr>
                     </tbody>

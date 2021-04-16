@@ -3,7 +3,14 @@
 @section('title'){{ $apiary->name }}@stop
 
 @section('content_header')
-    <h1 class="m-0 text-dark">{{ $apiary->name }}</h1>
+    <div class="row">
+        <div class="col-10">
+            <h1 class="m-0 text-dark">{{ $apiary->name }}</h1>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-primary btn-block" href="{{ route('apiaries.edit', $apiary->id) }}" role="button">Edit Apiary</a>
+        </div>
+    </div>
     @include('partials._messages')
 @stop
 

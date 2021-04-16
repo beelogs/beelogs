@@ -136,5 +136,12 @@ class ApiaryController extends Controller
     public function destroy($id)
     {
         //
+        $apiary = Apiary::find($id);
+
+        $apiary->delete();
+
+        Session::flash('success', 'The apiary was successfully deleted.');
+
+        return redirect()->route('apiaries.index');
     }
 }
