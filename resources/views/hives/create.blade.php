@@ -7,6 +7,8 @@
     <h1 class="m-0 text-dark">Create Hive</h1>
 @stop
 
+@include('partials._sidebar')
+
 @section('content')
 {!! Form::open(array('route' => 'hives.store', 'data-parsley-validate' => '')) !!}
     <div class="row">

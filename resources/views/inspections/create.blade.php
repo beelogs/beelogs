@@ -7,6 +7,8 @@
     <h1 class="m-0 text-dark">Create Inspection</h1>
 @stop
 
+@include('partials._sidebar')
+
 @section('content')
 {!! Form::open(array('route' => 'inspections.store', 'data-parsley-validate' => '')) !!}
     <div class="row">

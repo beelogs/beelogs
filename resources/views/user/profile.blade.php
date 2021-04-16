@@ -7,6 +7,8 @@
     @include('partials._messages')
 @stop
 
+@include('partials._sidebar')
+
 @section('content')
   <div class="row">
       <div class="col-9">

@@ -7,6 +7,8 @@
     @include('partials._messages')
 @stop
 
+@include('partials._sidebar')
+
 @section('content')
     {!! Form::model($apiary, ['route' => ['apiaries.update', $apiary->id], 'method' => 'PUT']) !!}
     <div class="row">

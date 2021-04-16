@@ -7,6 +7,8 @@
     <h1 class="m-0 text-dark">Create Queen</h1>
 @stop
 
+@include('partials._sidebar')
+
 @section('content')
 {!! Form::open(array('route' => 'queens.store', 'data-parsley-validate' => '')) !!}
     <div class="row">
