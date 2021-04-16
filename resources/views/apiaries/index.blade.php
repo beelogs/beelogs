@@ -33,18 +33,36 @@
                           <td><a href="{{ route('apiaries.show', $apiary->id) }}">{{ $apiary->name }}</a></td>
                         <td>{{ substr($apiary->description, 0, 110) }}{{ strlen($apiary->description) > 110 ? "..." : "" }}</td>
                         <td>
-                            {{ Form::open(['route' => ['apiaries.destroy', $apiary->id], 'method' => 'DELETE']) }}
                             <div class="btn-group btn-group-sm float-right" role="group" aria-label="Basic example">
                                 <a class="btn btn-primary" href="{{ route('apiaries.show', $apiary->id) }}" role="button">{{ trans('apiaries.index.view') }}</a>
                                 <a class="btn btn-secondary" href="{{ route('apiaries.edit', $apiary->id) }}" role="button">{{ trans('apiaries.index.edit') }}</a>
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                <a class="btn btn-danger" href="" role="button" data-toggle="modal" data-target="#deleteApiaryModel">{{ trans('apiaries.index.delete') }}</a>
                             </div>
-                            {{ Form::close() }}
                         </td>
                       </tr>
                     </tbody>
                     @endforeach
                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Confirm Delete Apiary Model --}}
+    <div class="modal fade" id="deleteApiaryModel" tabindex="-1" role="dialog" aria-labelledby="deleteApiaryModelCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Apiary</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{ Form::open(['route' => ['apiaries.destroy', $apiary->id], 'method' => 'DELETE']) }}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
