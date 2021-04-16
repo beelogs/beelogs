@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-12">
                             {{ Form::text('name', null, array('class' => 'form-control mb-3', 'placeholder' => 'Apiary Name', 'required' => '', 'maxlength' => '255')) }}
-                            {{ Form::textarea('description', null, array('class' => 'form-control mb-3', 'placeholder' => 'Apiary Description', 'required' => '', 'maxlength' => '255')) }}
+                            {{ Form::textarea('description', null, array('class' => 'form-control mb-3', 'placeholder' => 'Apiary Description', 'required' => '', 'maxlength' => '65535')) }}
                         </div>
                     </div>
                     <div class="row">

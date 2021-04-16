@@ -51,8 +51,8 @@ class ApiaryController extends Controller
     {
         // Validate the data
         $this->validate($request, array(
-          'name' => 'required',
-          'description' => 'required|max:255',
+          'name' => 'required|max:255',
+          'description' => 'required|max:65535',
           'latitude' => 'required|max:255',
           'longitude' => 'required|max:255'
         ));
@@ -109,8 +109,8 @@ class ApiaryController extends Controller
     {
         //
         $this->validate($request, array(
-            'name' => 'required',
-            'description' => 'required|max:255',
+            'name' => 'required|max:255',
+            'description' => 'required|max:65535',
             'latitude' => 'required|max:255',
             'longitude' => 'required|max:255'
         ));
